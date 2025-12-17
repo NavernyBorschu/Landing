@@ -28,6 +28,18 @@
     box-shadow: 0 1px 1px rgba(191, 186, 186, 0.6);
 }
 
+.background::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+                    to bottom,
+                    rgba(255, 255, 255, 0.95),
+                    rgba(255, 255, 255, 0)
+    );
+    pointer-events: none;
+}
+
 /*.finallandingmob-rectangle274 {*/
 /*    !*top: 0px;*!*/
 /*    !*left: 0px;*!*/
@@ -105,7 +117,6 @@
     color: var(--dl-color-main-black);
     height: auto;
     font-size: 17px;
-    font-style: Semibold;
     text-align: center;
     font-family: SF Pro;
     font-weight: 600;
@@ -265,6 +276,8 @@
 
 .finallandingmob-frame1139 {
     margin-top: -83px;
+    position: relative;
+    z-index: 10;
 }
 
 .finallandingmob-text102 {
@@ -327,10 +340,10 @@
 
 .finallandingmob-mobile1 {
     width: 180px;
-    //height: 42px;
+    height: 42px;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     position: relative;
     overflow: hidden;
     background: var(--dl-color-main-red);
@@ -342,13 +355,19 @@
     white-space: nowrap;
     font-weight: 400;
     margin-top: 10px;
+
+    @media (min-width: 1200px) {
+        width: 232px;
+        height: 59px;
+    }
 }
 
 
 .desktop-header-button {
     width: 180px;
+    height: 42px;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     position: relative;
     overflow: hidden;
     background: var(--dl-color-main-red);
@@ -364,6 +383,12 @@
 
     @media (min-width: 1200px) {
         display: flex;
+        font-size: 16px;
+    }
+
+    & > .finallandingmob-text105 {
+        font-weight: 500;
+        font-size: 16px;
     }
 }
 
@@ -383,7 +408,13 @@
     margin-right: 0;
     z-index: 2;
     white-space: nowrap;
+
+    @media (min-width: 1200px) {
+        font-size: 24px;
+        font-weight: 600;
+    }
 }
+
 
 .finallandingmob-spoon-for-button {
     width: 53px;
@@ -393,15 +424,21 @@
     transform: translateX(20px);
     transition: opacity 0.3s, transform 0.3s;
     z-index: 1;
+    position: absolute;
+    right: 16px;
 }
 
 /* Анімація при наведенні */
 .finallandingmob-mobile1:hover {
     width: 230px;
+
+    @media (min-width: 1200px) {
+        width: 300px;
+    }
 }
 
 .finallandingmob-mobile1:hover .finallandingmob-text105 {
-    transform: translateX(-8px); /* менший зсув тексту */
+    transform: translateX(-30px); /* менший зсув тексту */
 }
 
 .finallandingmob-mobile1:hover .finallandingmob-spoon-for-button {
@@ -425,14 +462,19 @@
 }
 
 .finallandingmob-group1000004176 {
-    top: 368px;
-    left: 16px;
+    top: -117px;
+    left: -12px;
     width: 216px;
     height: 66px;
     display: flex;
     position: absolute;
     align-items: flex-start;
     flex-shrink: 1;
+
+    @media (min-width: 1200px) {
+        top: 70px;
+        left: 383px;
+    }
 }
 
 .finallandingmob-frame1028 {
@@ -450,6 +492,11 @@
     border-radius: 11.454168319702148px;
     flex-direction: column;
     background-color: var(--dl-color-main-white);
+
+    @media (min-width: 1200px) {
+        width: 277px;
+        height: 89px;
+    }
 }
 
 .finallandingmob-frame10251 {
@@ -552,18 +599,25 @@
 
 .finallandingmob-frame1023 {
     top: 10px;
-    left: 0px;
+    left: 0;
     width: 196px;
     height: 56px;
     display: flex;
     padding: 8px;
     position: absolute;
-    box-shadow: 0px 0px 22.401439666748047px 0px rgba(110, 110, 110, 0.25);
+    box-shadow: 0 0 22.401439666748047px 0 rgba(110, 110, 110, 0.25);
     align-items: flex-start;
     flex-shrink: 0;
     border-radius: 11.947434425354004px;
-    flex-direction: column;
+    //flex-direction: column;
     background-color: var(--dl-color-main-white);
+
+    @media (min-width: 1200px) {
+        width: 277px;
+        height: 89px;
+        align-items: center;
+        padding: 16px;
+    }
 }
 
 .finallandingmob-frame10252 {
@@ -574,6 +628,12 @@
     opacity: 0.88;
     align-items: center;
     flex-shrink: 0;
+
+    @media (min-width: 1200px) {
+        gap: 14px;
+        width: 100%;
+        height: auto;
+    }
 }
 
 .finallandingmob-frame10242 {
@@ -588,6 +648,11 @@
 .finallandingmob-beetroot211 {
     width: 24px;
     height: 24px;
+
+    @media (min-width: 1200px) {
+        width: 35px;
+        height: 35px;
+    }
 }
 
 .finallandingmob-text108 {
@@ -612,6 +677,12 @@
     height: auto;
     text-align: left;
     line-height: 129.99999523162842%;
+
+    @media (min-width: 1200px) {
+        font-weight: 400 !important;
+        font-size: 20px;
+        color: var(--dl-color-main-black);
+    }
 }
 
 .finallandingmob-contentwithicon2 {
@@ -645,16 +716,26 @@
     width: 143px;
     height: 6px;
     border-radius: 1.4934293031692505px;
+
+    @media (min-width: 1200px) {
+        width: 191px;
+        height: 8px;
+    }
 }
 
 .finallandingmob-snakebar4 {
-    top: 0px;
-    left: 0px;
+    top: 0;
+    left: 0;
     width: 104px;
     height: 6px;
     z-index: 1;
     position: absolute;
     border-radius: 1.4934293031692505px 0 0 1.4934293031692505px;
+
+    @media (min-width: 1200px) {
+        width: 139px;
+        height: 8px;
+    }
 }
 
 .iphonescreen-wrapper {
@@ -670,12 +751,17 @@
     height: 302px;
     /*position: absolute;*/
     margin: 0 auto;
+
+    @media (min-width: 900px) {
+        width: 429px;
+        height: 406px;
+    }
 }
 
 .finallandingmob-frame1041 {
-    top: 451px;
-    right: 15px;
-    width: 164px;
+    top: -30px;
+    right: -15px;
+    width: 163px;
     display: flex;
     padding: 8px;
     position: absolute;
@@ -693,18 +779,55 @@
 
 .desktop-line122 {
     display: none;
+    width: 385px;
+    padding: 16px;
+    //width: 385px;
+    //height: 93px;
+    background: #FFFFFF;
+    box-shadow: 0 0 30px rgba(111, 111, 111, 0.25);
+    border-radius: 16px;
+
 
     @media (min-width: 900px) {
-        display: block;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 12px;
         position: absolute;
-        top:0;
-        left: 0;
+        top: 60px;
+        left: -55%;
         z-index: 10;
     }
 
     @media (min-width: 1200px) {
-        top: 10px;
-        left: -110%;
+        top: 40%;
+        left: -75%;
+    }
+}
+
+.desktop-meats-wrapper {
+    text-align: left;
+}
+
+.desktop-line122-meats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.desktop-line122-meat {
+    padding: 6px 10px;
+    width: 70px;
+    //height: 25px;
+    background: #F8F8F8;
+    border: 1px solid #ABDD9C;
+    border-radius: 24px;
+    text-align: center;
+
+    &.painted {
+        background: #ABDD9C;
     }
 }
 
@@ -720,18 +843,18 @@
     background: #FFFFFF;
     box-shadow: 0 0 30px rgba(111, 111, 111, 0.25);
     border-radius: 16px;
-
     position: absolute;
-    bottom: 86px;
-    right: -85%;
     z-index: 10;
 
     @media (min-width: 900px) {
         display: flex;
+        bottom: 115px;
+        right: -55%;
     }
 
     @media (min-width: 1200px) {
-        right: -115%;
+        right: -88%;
+        font-size: 32px;
     }
 }
 
@@ -920,19 +1043,25 @@
 
 
 .finallandingmob-frame1039 {
-    top: 333px;
-    right: 50px;
+    top: -150px;
+    right: -8px;
     width: 78px;
     height: 48px;
     display: flex;
     position: absolute;
-    box-shadow: 0px 0px 17.349397659301758px 0px rgba(110, 110, 110, 0.25);
+    box-shadow: 0 0 17.349397659301758px 0 rgba(110, 110, 110, 0.25);
     align-items: flex-start;
     flex-shrink: 0;
     border-radius: 12px;
     background-color: var(--dl-color-main-white);
-
     transform: rotate(-20deg);
+
+    @media (min-width: 1200px) {
+        top: 16px;
+        right: 554px;
+        width: 135px;
+        height: 83px;
+    }
 }
 
 
@@ -967,6 +1096,13 @@
     width: 61px;
     height: 33px;
     position: absolute;
+
+    @media (min-width: 1200px) {
+            top: -5.867735px;
+            left: 0.398489px;
+            width: 119px;
+            height: 63px;
+    }
 }
 
 
@@ -979,6 +1115,12 @@
     justify-content: center;
     gap: 4px;
     z-index: 1;
+
+    @media (min-width: 1200px) {
+        top: 18px;
+        left: 7px;
+        gap: 2px;
+    }
 }
 
 
@@ -987,6 +1129,11 @@
     height: 25px;
     position: relative;
     transform: rotate(10deg);
+
+    @media (min-width: 1200px) {
+        width: 44px;
+        height: 44px;
+    }
 }
 
 
@@ -995,6 +1142,10 @@
     height: auto;
     text-align: left;
     line-height: 129.99999523162842%;
+
+    @media (min-width: 1200px) {
+        font-size: 32px;
+    }
 }
 
 /* Borsch drop */
@@ -2019,6 +2170,13 @@
     @media (min-width: 900px) {
         margin-top: 48px;
     }
+
+    @media (min-width: 1200px) {
+        width: 271px;
+        height: 59px;
+        justify-content: center;
+        text-align: center;
+    }
 }
 
 .finallandingmob-text140 {
@@ -2029,11 +2187,15 @@
     white-space: nowrap;
     line-height: normal;
     transition: transform 0.3s cubic-bezier(.4, 0, .2, 1);
+
+    @media (min-width: 1200px) {
+        font-size: 24px;
+    }
 }
 
 .finallandingmob-spoon-for-button2 {
-    /*position: absolute;*/
-    /*right: 16px;*/
+    position: absolute;
+    right: 16px;
     width: 53px;
     height: 33px;
     opacity: 0;
@@ -2056,6 +2218,10 @@
 
 .finallandingmob-mobile2:hover {
     width: 250px; /* кнопка стає ширшою */
+
+    @media (min-width: 1200px) {
+        width: 320px;
+    }
 }
 
 
@@ -4238,6 +4404,11 @@
     flex-shrink: 0;
     flex-direction: column;
     justify-content: center;
+
+    @media (min-width: 1200px) {
+        gap: 40px;
+        margin-top: 30px;
+    }
 }
 
 
@@ -4279,6 +4450,11 @@
     @media (min-width: 900px) {
         width: 48%;
     }
+
+    @media (min-width: 1200px) {
+        gap: 40px;
+    }
+
 }
 
 .desktop-form-wrapper {
@@ -4501,14 +4677,23 @@
     height: 42px;
     display: flex;
     align-items: center;
-    justify-content: center; /* залишимо, але ложку відділимо */
+    justify-content: center;
     position: relative;
     overflow: hidden;
     border: 1px solid rgba(165, 165, 165, 1);
     border-radius: 45px;
     background-color: var(--dl-color-main-red);
-    padding: 0; /* прибираємо зайві падінги, щоб текст був реально по центру */
+    padding: 0;
     box-sizing: border-box;
+    transition: 0.3s;
+    gap: 10px;
+    cursor: pointer;
+
+    @media (min-width: 1200px) {
+        width: 163px;
+        height: 59px;
+        font-size: 24px;
+    }
 }
 
 .finallandingmob-text205 {
@@ -4519,12 +4704,12 @@
 }
 
 .finallandingmob-spoon-for-button3 {
-    position: absolute; /* тепер ложка незалежна від flex */
-    right: 12px; /* місце, де вона має бути */
+    position: absolute;
+    right: 12px;
     width: 53px;
     height: 33px;
     opacity: 0;
-    transform: translateX(30px); /* у спокійному стані трохи вправо */
+    transform: translateX(30px);
     transition: opacity 0.3s, transform 0.3s;
     z-index: 1;
 }
@@ -4540,7 +4725,7 @@
 }
 
 .finallandingmob-mobile3:hover {
-    width: 180px; /* кнопка стає ширшою */
+    width: 200px; /* кнопка стає ширшою */
 }
 
 
@@ -4559,8 +4744,6 @@
     display: block;
     width: 154px;
     height: 180px;
-
-    /*position: relative;*/
 
     @media (min-width: 900px) {
         position: absolute;
@@ -4692,14 +4875,9 @@
     line-height: 129.99999523162842%;
 }
 
-
 .finallandingmob-frame1142 {
     gap: 16px;
-    /*top: 0px;*/
-    /*left: 0px;*/
-    /*height: 73.76656341552734px;*/
     display: flex;
-    /*position: absolute;*/
     align-items: center;
     flex-shrink: 0;
 }
@@ -4781,8 +4959,8 @@
 
 
 .finallandingmob-group11 {
-    top: 0px;
-    left: 0px;
+    top: 0;
+    left: 0;
     width: 24px;
     height: 24.000003814697266px;
     display: flex;
@@ -4793,8 +4971,8 @@
 
 
 .finallandingmob-vector26 {
-    top: 0px;
-    left: 0px;
+    top: 0;
+    left: 0;
     width: 24px;
     height: 24px;
     position: absolute;
@@ -4802,8 +4980,8 @@
 
 
 .finallandingmob-vector27 {
-    top: 0px;
-    left: 0px;
+    top: 0;
+    left: 0;
     width: 21px;
     height: 18px;
     position: absolute;
@@ -5120,12 +5298,6 @@
     font-weight: 300;
 }
 
-.finallandingmob-frame1101 {
-    gap: 16px;
-    /*width: 343px;*/
-    display: flex;
-    flex-direction: column;
-}
 
 .finallandingmob-frame7741, .finallandingmob-frame7742, .finallandingmob-frame7743 {
     position: relative;
@@ -5151,6 +5323,10 @@
     border-radius: 24px;
     background: #fff;
     min-height: 44px;
+
+    @media (min-width: 1200px) {
+        min-height: 50px;
+    }
 }
 
 .finallandingmob-input-area3 {
@@ -5161,6 +5337,10 @@
     border-radius: 24px;
     background: rgba(255, 255, 255, 0.8);
     min-height: 120px;
+
+    @media (min-width: 1200px) {
+        min-height: 140px;
+    }
 }
 
 .finallandingmob-input-area1 input,
@@ -5189,24 +5369,15 @@
     border-radius: 14px;
 }
 
-.finallandingmob-mobile3 {
-    transition: 0.3s;
-    gap: 10px;
-    height: 42px;
-    display: flex;
-    padding: 14px 24px;
-    align-items: center;
-    border: 1px solid #a5a5a5;
-    border-radius: 45px;
-    justify-content: center;
-    background: #e63946;
-    cursor: pointer;
-}
 
 .finallandingmob-text205 {
     color: #fff;
     font-weight: 500;
     font-size: 14px;
+
+    @media (min-width: 1200px) {
+        font-size: 24px;
+    }
 }
 
 .form-message {
@@ -5254,7 +5425,7 @@
     overflow: hidden;
     background: transparent;
     border-radius: 0;
-    padding: 0 20px 0;
+    //padding: 0 20px 0;
 
     @media (min-width: 900px) {
         border: 1px solid rgba(0, 0, 0, 0.3);

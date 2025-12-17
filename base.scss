@@ -147,37 +147,37 @@ html, body {
 .mobilefootnote {
     font-size: 14px;
     font-style: normal;
-    font-family: Roboto;
-    font-weight: 400px;
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
     font-stretch: normal;
-    letter-spacing: 0em;
+    letter-spacing: 0;
 }
 
 .mobilecaption {
     font-size: 12px;
     font-style: normal;
-    font-family: Roboto;
-    font-weight: 400px;
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
     font-stretch: normal;
-    letter-spacing: 0em;
+    letter-spacing: 0;
 }
 
 .LandingMobh1 {
     font-size: 34px;
     font-style: normal;
-    font-family: Roboto;
-    font-weight: 500px;
+    font-family: Roboto, sans-serif;
+    font-weight: 500;
     font-stretch: normal;
-    letter-spacing: 0em;
+    letter-spacing: 0;
 }
 
 .LandingMobh1Mak {
     font-size: 36px;
     font-style: normal;
-    font-family: Mak;
-    font-weight: 700px;
+    font-family: Mak, Helvetica, sans-serif;
+    font-weight: 700;
     font-stretch: normal;
-    letter-spacing: 0em;
+    letter-spacing: 0;
 }
 
 .LandingMobh2 {
@@ -196,7 +196,7 @@ html, body {
 .LandingMobh2Mak {
     font-size: 28px;
     font-style: normal;
-    font-family: Mak;
+    font-family: Mak, Helvetica, sans-serif;
     font-weight: 700;
     font-stretch: normal;
     letter-spacing: 0;
@@ -218,6 +218,8 @@ html, body {
     font-weight: 400;
     font-stretch: normal;
     letter-spacing: 0;
+    line-height: 140%;
+    color: var(--dl-color-main-black);
 }
 
 .LandingMobbody {
@@ -267,7 +269,12 @@ html, body {
     font-weight: 400;
     font-stretch: normal;
     letter-spacing: 0;
+    line-height: 130%;
+    color: var(--dl-color-main-black);
 }
+
+
+
 
 
 
