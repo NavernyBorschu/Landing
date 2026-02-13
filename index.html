@@ -1589,7 +1589,7 @@
 
             let currentIndex = 0;
 
-            const cardWidth = posts[0].offsetWidth + 16; // card + gap
+            const cardWidth = posts[0]?.offsetWidth + 16; // card + gap
 
             const updateSlider = () => {
                 track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
@@ -1636,10 +1636,13 @@
         // }
 
 
-        // Slider navigation
+        // Slider navigation "Як це працює"
         const slides = document.querySelectorAll(".slide");
         const navButtons = document.querySelectorAll(".nav-button");
+        const slider1 = document.querySelector(".slider");
+
         let currentSlide = 0;
+        let autoSlider1 = null;
 
         const showSlide = (index) => {
             slides.forEach(slide => slide.classList.remove("active"));
@@ -1665,6 +1668,55 @@
         };
 
         navButtons.forEach((button, i) => button.addEventListener('click', () => showSlide(i)));
+
+        // Auto slide every 5 seconds
+        const AUTO_DELAY = 5000;
+
+        const startAutoSlide = () => {
+            if (autoSlider1) return; // prevent duplicate intervals
+
+            autoSlider1 = setInterval(() => {
+                let nextSlide = currentSlide + 1;
+
+                if (nextSlide >= slides.length) {
+                    nextSlide = 0;
+                }
+
+                showSlide(nextSlide);
+
+            }, AUTO_DELAY);
+        };
+
+        const stopAutoSlide = () => {
+            if (!autoSlider1) return;
+
+            clearInterval(autoSlider1);
+            autoSlider1 = null;
+        };
+
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+                        startAutoSlide();
+                    } else {
+                        stopAutoSlide();
+                    }
+
+                });
+            },
+            {
+                threshold: 0.5
+            }
+        );
+
+// start observing slider
+        if (slider1) {
+            observer.observe(slider1);
+        }
+
 
 
         // Coming Soon modal
