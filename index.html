@@ -1213,7 +1213,7 @@
                         </div>
 
                         <div class="swiper-slide">
-                            <a href="" target="_blank" class="team-member">
+                            <a href="https://www.linkedin.com/in/anna-morozova-b8869126a/" target="_blank" class="team-member">
                                 <img src="command_foto/Morozova.png" alt="Анна Морозова">
                                 <span class="name">Анна Морозова</span>
                                 <span class="role">PR</span>
@@ -1579,36 +1579,39 @@
         }
 
         // Slider "collab"
-        const slider = document.getElementById('collab');
+        const track = document.querySelector('.finallandingmob-frame1166 .finallandingmob-frame1103');
+        const prevBtn = document.querySelector('.finallandingmob-arrowleft');
+        const nextBtn = document.querySelector('.finallandingmob-arrowright');
 
-        if (slider) {
-            const track = slider.querySelector('.finallandingmob-frame1103');
-            const posts = slider.querySelectorAll('.finallandingmob-post');
-            const prevBtn = document.querySelector(".finallandingmob-frame1104 img[src*='arrowleft']");
-            const nextBtn = document.querySelector(".finallandingmob-frame1104 img[src*='arrowright']");
-
+        if (track && prevBtn && nextBtn) {
+            const posts = track.querySelectorAll('.finallandingmob-post');
             let currentIndex = 0;
 
-            const cardWidth = posts[0]?.offsetWidth + 16; // card + gap
+            const getCardWidth = () => {
+                const firstCard = posts[0];
+                if (!firstCard) return 0;
+
+                const gap = parseFloat(window.getComputedStyle(track).columnGap || '0') || 16;
+                return firstCard.getBoundingClientRect().width + gap;
+            };
 
             const updateSlider = () => {
+                const cardWidth = getCardWidth();
+                if (!cardWidth) return;
+
                 track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
                 track.style.transition = 'transform 0.4s ease';
             };
 
-            if (prevBtn) {
-                prevBtn.addEventListener('click', () => {
-                    currentIndex = Math.max(0, currentIndex - 1);
-                    updateSlider();
-                });
-            }
+            prevBtn.addEventListener('click', () => {
+                currentIndex = Math.max(0, currentIndex - 1);
+                updateSlider();
+            });
 
-            if (nextBtn) {
-                nextBtn.addEventListener('click', () => {
-                    currentIndex = Math.min(posts.length - 1, currentIndex + 1);
-                    updateSlider();
-                });
-            }
+            nextBtn.addEventListener('click', () => {
+                currentIndex = Math.min(posts.length - 1, currentIndex + 1);
+                updateSlider();
+            });
         }
 
         // const slider = document.getElementById('collab');
